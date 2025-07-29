@@ -1,0 +1,350 @@
+E:\Dataset\blur\archive\sharp\0_IPHONE-SE_S.JPG, Quality: 56, BlurExtent: 0.436, Per: 0.01762, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\100_NIKON-D3400-35MM_S.JPG, Quality: 58, BlurExtent: 0.413, Per: 0.00752, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\101_NIKON-D3400-35MM_S.JPG, Quality: 3, BlurExtent: 0.967, Per: 0.00000, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\102_NIKON-D3400-35MM_S.JPG, Quality: 25, BlurExtent: 0.743, Per: 0.00099, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\103_HUAWEI-P20_S.jpg, Quality: 94, BlurExtent: 0.059, Per: 0.02986, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\104_IPHONE-SE_S.jpg, Quality: 63, BlurExtent: 0.366, Per: 0.00248, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\105_IPHONE-SE_S.jpg, Quality: 60, BlurExtent: 0.391, Per: 0.00472, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\106_NIKON-D3400-35MM_S.JPG, Quality: 94, BlurExtent: 0.054, Per: 0.11447, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\107_XIAOMI-MI8-SE_S.jpg, Quality: 54, BlurExtent: 0.457, Per: 0.06322, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\108_XIAOMI-MI8-SE_S.jpg, Quality: 33, BlurExtent: 0.668, Per: 0.00234, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\109_HONOR-7X_S.jpg, Quality: 27, BlurExtent: 0.720, Per: 0.01841, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\10_ASUS-ZENFONE-LIVE-ZB501KL_S.jpg, Quality: 36, BlurExtent: 0.639, Per: 0.01108, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\110_IPHONE-7_S.jpeg, Quality: 80, BlurExtent: 0.193, Per: 0.14146, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\111_IPHONE-7_S.jpeg, Quality: 53, BlurExtent: 0.461, Per: 0.02174, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\112_NIKON-D3400-35MM_S.JPG, Quality: 65, BlurExtent: 0.350, Per: 0.00485, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\113_SAMSUNG-GALAXY-A5_S.jpg, Quality: 77, BlurExtent: 0.227, Per: 0.03716, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\114_ASUS-ZE500KL_S.jpg, Quality: 41, BlurExtent: 0.584, Per: 0.00359, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\115_NIKON-D3400-35MM_S.JPG, Quality: 96, BlurExtent: 0.040, Per: 0.03458, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\116_BQ-5512L_S.jpg, Quality: 55, BlurExtent: 0.440, Per: 0.03454, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\117_HONOR-7X_S.jpg, Quality: 74, BlurExtent: 0.256, Per: 0.06532, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\118_HONOR-7X_S.jpg, Quality: 66, BlurExtent: 0.338, Per: 0.07055, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\119_HONOR-7X_S.jpg, Quality: 59, BlurExtent: 0.409, Per: 0.02262, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\11_XIAOMI-MI8-SE_S.jpg, Quality: 41, BlurExtent: 0.581, Per: 0.00420, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\120_HONOR-7X_S.jpg, Quality: 40, BlurExtent: 0.600, Per: 0.01550, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\121_HONOR-7X_S.jpg, Quality: 70, BlurExtent: 0.294, Per: 0.01623, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\122_HONOR-7X_S.jpg, Quality: 70, BlurExtent: 0.292, Per: 0.02059, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\123_NIKON-D3400-35MM_S.JPG, Quality: 97, BlurExtent: 0.026, Per: 0.06805, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\124_HONOR-7X_S.jpg, Quality: 69, BlurExtent: 0.300, Per: 0.00824, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\125_NIKON-D3400-35MM_S.JPG, Quality: 96, BlurExtent: 0.030, Per: 0.16240, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\126_NIKON-D3400-18-55MM_S.JPG, Quality: 36, BlurExtent: 0.635, Per: 0.00000, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\127_IPHONE-8_S.jpeg, Quality: 0, BlurExtent: 1.000, Per: 0.00000, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\128_XIAOMI-MI8-SE_S.jpg, Quality: 49, BlurExtent: 0.510, Per: 0.01022, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\129_NIKON-D3400-18-55MM_S.JPG, Quality: 68, BlurExtent: 0.314, Per: 0.00793, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\12_SAMSUNG-GALAXY-J5_S.jpg, Quality: 16, BlurExtent: 0.831, Per: 0.00113, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\130_NIKON-D3400-18-55MM_S.JPG, Quality: 63, BlurExtent: 0.362, Per: 0.00265, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\131_NIKON-D3400-18-55MM_S.JPG, Quality: 73, BlurExtent: 0.261, Per: 0.00821, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\132_NIKON-D3400-18-55MM_S.JPG, Quality: 72, BlurExtent: 0.280, Per: 0.00463, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\133_NIKON-D3400-18-55MM_S.JPG, Quality: 93, BlurExtent: 0.064, Per: 0.00097, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\134_NIKON-D3400-18-55MM_S.JPG, Quality: 68, BlurExtent: 0.318, Per: 0.01691, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\135_NIKON-D3400-18-55MM_S.JPG, Quality: 77, BlurExtent: 0.221, Per: 0.02228, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\136_XIAOMI-REDMI-3S_S.jpg, Quality: 79, BlurExtent: 0.203, Per: 0.02755, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\137_NIKON-D3400-18-55MM_S.JPG, Quality: 81, BlurExtent: 0.188, Per: 0.03655, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\138_NIKON-D3400-35MM_S.JPG, Quality: 74, BlurExtent: 0.257, Per: 0.01969, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\139_NIKON-D3400-18-55MM_S.JPG, Quality: 10, BlurExtent: 0.895, Per: 0.00165, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\13_IPHONE-8-PLUS_S.jpg, Quality: 70, BlurExtent: 0.295, Per: 0.00000, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\140_SAMSUNG-GALAXY-J5_S.jpg, Quality: 28, BlurExtent: 0.718, Per: 0.00337, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\141_NIKON-D3400-18-55MM_S.JPG, Quality: 71, BlurExtent: 0.285, Per: 0.07491, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\142_NIKON-D3400-18-55MM_S.JPG, Quality: 97, BlurExtent: 0.030, Per: 0.03720, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\143_NIKON-D3400-18-55MM_S.JPG, Quality: 63, BlurExtent: 0.362, Per: 0.02673, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\144_NIKON-D3400-18-55MM_S.JPG, Quality: 71, BlurExtent: 0.280, Per: 0.02217, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\145_NIKON-D3400-18-55MM_S.JPG, Quality: 76, BlurExtent: 0.238, Per: 0.01680, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\146_NIKON-D3400-18-55MM_S.JPG, Quality: 83, BlurExtent: 0.165, Per: 0.02241, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\147_NIKON-D3400-35MM_S.JPG, Quality: 89, BlurExtent: 0.110, Per: 0.04996, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\148_NIKON-D3400-18-55MM_S.JPG, Quality: 93, BlurExtent: 0.062, Per: 0.01770, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\149_NIKON-D3400-18-55MM_S.JPG, Quality: 94, BlurExtent: 0.053, Per: 0.03621, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\14_IPHONE-7_S.jpeg, Quality: 4, BlurExtent: 0.958, Per: 0.00292, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\150_NIKON-D3400-18-55MM_S.JPG, Quality: 95, BlurExtent: 0.044, Per: 0.07955, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\151_NIKON-D3400-35MM_S.JPG, Quality: 90, BlurExtent: 0.094, Per: 0.00679, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\152_NIKON-D3400-18-55MM_S.JPG, Quality: 99, BlurExtent: 0.002, Per: 0.00112, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\153_NIKON-D3400-18-55MM_S.JPG, Quality: 66, BlurExtent: 0.333, Per: 0.00915, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\154_IPHONE-7_S.jpeg, Quality: 70, BlurExtent: 0.293, Per: 0.02195, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\155_HONOR-10_S.jpg, Quality: 78, BlurExtent: 0.217, Per: 0.05067, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\156_HUAWEI-P30-LITE_S.jpg, Quality: 66, BlurExtent: 0.332, Per: 0.01062, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\157_NIKON-D3400-35MM_S.JPG, Quality: 97, BlurExtent: 0.029, Per: 0.02392, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\158_IPHONE-7_S.jpeg, Quality: 51, BlurExtent: 0.487, Per: 0.04877, is blur: False, Full image processed
+E:\Dataset\blur\archive\sharp\159_NIKON-D3400-35MM_S.JPG, Quality: 73, BlurExtent: 0.266, Per: 0.01983, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\15_HONOR-7C_S.jpg, Quality: 7, BlurExtent: 0.925, Per: 0.00000, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\160_HUAWEI-P20-LITE_S.jpg, Quality: 23, BlurExtent: 0.763, Per: 0.00149, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\161_XIAOMI-MI8-SE_S.jpg, Quality: 34, BlurExtent: 0.653, Per: 0.01668, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\162_IPHONE-6S_S.jpg, Quality: 2, BlurExtent: 0.972, Per: 0.00000, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\163_SAMSUNG-GALAXY-GRAND-PRIME-PLUS_S.jpg, Quality: 63, BlurExtent: 0.365, Per: 0.06133, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\164_XIAOMI-MI8-SE_S.jpg, Quality: 68, BlurExtent: 0.318, Per: 0.00320, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\165_SAMSUNG-GALAXY-J3_S.jpg, Quality: 27, BlurExtent: 0.730, Per: 0.00258, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\166_XIAOMI-MI8-SE_S.jpg, Quality: 29, BlurExtent: 0.705, Per: 0.01536, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\167_HONOR-7X_S.jpg, Quality: 46, BlurExtent: 0.539, Per: 0.00253, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\168_CANON-6D-100MM_S.JPG, Quality: 54, BlurExtent: 0.450, Per: 0.01811, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\169_HONOR-7X_S.jpg, Quality: 54, BlurExtent: 0.450, Per: 0.00379, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\16_IPHONE-7_S.jpeg, Quality: 60, BlurExtent: 0.396, Per: 0.00375, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\170_IPHONE-8_S.JPG, Quality: 97, BlurExtent: 0.029, Per: 0.06546, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\171_HUAWEI-P20-LITE_S.jpg, Quality: 9, BlurExtent: 0.902, Per: 0.01510, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\172_IPHONE-SE_S.jpg, Quality: 49, BlurExtent: 0.505, Per: 0.00909, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\173_IPHONE-SE_S.jpg, Quality: 28, BlurExtent: 0.710, Per: 0.01514, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\174_HUAWEI-P20_S.jpg, Quality: 52, BlurExtent: 0.470, Per: 0.01024, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\175_IPHONE-SE_S.jpg, Quality: 67, BlurExtent: 0.326, Per: 0.00557, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\176_HONOR-7X_S.jpg, Quality: 66, BlurExtent: 0.331, Per: 0.01415, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\177_HONOR-7X_S.jpg, Quality: 35, BlurExtent: 0.642, Per: 0.01148, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\178_HONOR-7X_S.jpg, Quality: 41, BlurExtent: 0.580, Per: 0.01402, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\179_CANON-6D-100MM_S.JPG, Quality: 37, BlurExtent: 0.623, Per: 0.00806, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\17_HUAWEI-MATE20_S.jpg, Quality: 68, BlurExtent: 0.312, Per: 0.04238, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\180_HONOR-10_S.jpg, Quality: 76, BlurExtent: 0.239, Per: 0.23149, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\181_HONOR-10_S.jpg, Quality: 43, BlurExtent: 0.564, Per: 0.00795, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\182_HONOR-10_S.jpg, Quality: 98, BlurExtent: 0.016, Per: 0.04657, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\183_XIAOMI-REDMI-7_S.jpg, Quality: 50, BlurExtent: 0.495, Per: 0.01429, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\184_HONOR-10_S.jpg, Quality: 75, BlurExtent: 0.241, Per: 0.05466, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\185_HONOR-6X_S.jpg, Quality: 57, BlurExtent: 0.420, Per: 0.00143, is blur: False, Full image processed
+E:\Dataset\blur\archive\sharp\186_HONOR-8_S.jpg, Quality: 30, BlurExtent: 0.693, Per: 0.02930, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\187_XIAOMI-REDMI-4A_S.jpg, Quality: 81, BlurExtent: 0.185, Per: 0.02814, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\188_NIKON-D3400-18-55MM_S.JPG, Quality: 47, BlurExtent: 0.522, Per: 0.00011, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\189_HONOR-7X_S.jpg, Quality: 66, BlurExtent: 0.336, Per: 0.02300, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\18_XIAOMI-REDMI-5-PLUS_S.jpg, Quality: 57, BlurExtent: 0.424, Per: 0.01578, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\190_NIKON-D3400-18-55MM_S.JPG, Quality: 22, BlurExtent: 0.770, Per: 0.00667, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\191_NIKON-D3400-18-55MM_S.JPG, Quality: 36, BlurExtent: 0.631, Per: 0.00044, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\192_XIAOMI-MI8-SE_S.jpg, Quality: 41, BlurExtent: 0.588, Per: 0.00544, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\193_IPHONE-7_S.jpeg, Quality: 74, BlurExtent: 0.260, Per: 0.10221, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\194_IPHONE-SE_S.jpg, Quality: 62, BlurExtent: 0.374, Per: 0.03281, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\195_IPHONE-7_S.jpeg, Quality: 76, BlurExtent: 0.231, Per: 0.02462, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\196_IPHONE-SE_S.jpg, Quality: 71, BlurExtent: 0.285, Per: 0.02819, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\197_HUAWEI-P20-LITE_S.jpg, Quality: 31, BlurExtent: 0.685, Per: 0.00203, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\198_HUAWEI-P20-LITE_S.jpg, Quality: 18, BlurExtent: 0.817, Per: 0.00154, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\199_CANON-6D-100MM_S.JPG, Quality: 61, BlurExtent: 0.383, Per: 0.00441, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\19_IPHONE-7-PLUS_S.jpeg, Quality: 63, BlurExtent: 0.369, Per: 0.02232, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\1_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 54, BlurExtent: 0.450, Per: 0.02477, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\200_HUAWEI-MATE20_S.jpg, Quality: 13, BlurExtent: 0.869, Per: 0.00227, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\201_IPHONE-SE_S.jpg, Quality: 55, BlurExtent: 0.444, Per: 0.02840, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\202_HUAWEI-P20-LITE_S.jpg, Quality: 31, BlurExtent: 0.684, Per: 0.00674, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\203_IPHONE-SE_S.jpg, Quality: 17, BlurExtent: 0.821, Per: 0.00082, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\204_XIAOMI-MI8-SE_S.jpg, Quality: 55, BlurExtent: 0.447, Per: 0.02793, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\205_HUAWEI-P20-LITE_S.jpg, Quality: 17, BlurExtent: 0.820, Per: 0.00014, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\206_IPHONE-7_S.jpg, Quality: 61, BlurExtent: 0.390, Per: 0.01052, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\207_SAMSUNG-GALAXY-J7_S.jpg, Quality: 58, BlurExtent: 0.418, Per: 0.01141, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\208_SAMSUNG-GALAXY-A5_S.jpg, Quality: 92, BlurExtent: 0.072, Per: 0.02490, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\209_SAMSUNG-GALAXY-A8_S.jpg, Quality: 56, BlurExtent: 0.437, Per: 0.03655, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\20_XIAOMI-REDMI-3S_S.jpg, Quality: 22, BlurExtent: 0.771, Per: 0.00137, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\210_CANON-6D-70-200MM_S.JPG, Quality: 98, BlurExtent: 0.014, Per: 0.27656, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\211_SAMSUNG-GALAXY-7-NEO_S.jpg, Quality: 23, BlurExtent: 0.767, Per: 0.00173, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\212_IPHONE-SE_S.jpg, Quality: 28, BlurExtent: 0.712, Per: 0.00279, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\213_ONEPLUS-3T_S.jpg, Quality: 96, BlurExtent: 0.039, Per: 0.04277, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\214_IPHONE-SE_S.jpg, Quality: 25, BlurExtent: 0.745, Per: 0.00453, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\215_LG-Q6_S.jpg, Quality: 27, BlurExtent: 0.722, Per: 0.00619, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\216_ASUS-ZENFONE-LIVE-ZB501KL_S.jpg, Quality: 56, BlurExtent: 0.434, Per: 0.06667, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\217_IPHONE-SE_S.jpg, Quality: 51, BlurExtent: 0.485, Per: 0.00707, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\218_IPHONE-SE_S.jpg, Quality: 93, BlurExtent: 0.067, Per: 0.04784, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\219_IPHONE-6S_S.jpg, Quality: 13, BlurExtent: 0.865, Per: 0.00166, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\21_HUAWEI-Y9_S.jpg, Quality: 37, BlurExtent: 0.629, Per: 0.00828, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\220_IPHONE-6_S.jpg, Quality: 58, BlurExtent: 0.416, Per: 0.01377, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\221_IPHONE-SE_S.jpg, Quality: 34, BlurExtent: 0.650, Per: 0.00916, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\222_IPHONE-SE_S.jpg, Quality: 23, BlurExtent: 0.761, Per: 0.00071, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\223_HONOR-4C_S.jpg, Quality: 6, BlurExtent: 0.934, Per: 0.00088, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\224_ONEPLUS-3T_S.jpg, Quality: 50, BlurExtent: 0.497, Per: 0.03426, is blur: False, Full image processed
+E:\Dataset\blur\archive\sharp\225_HONOR-7C_S.jpg, Quality: 32, BlurExtent: 0.680, Per: 0.00055, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\226_IPHONE-7-PLUS_S.jpeg, Quality: 51, BlurExtent: 0.486, Per: 0.01012, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\227_SAMSUNG-GALAXY-A3_S.jpg, Quality: 27, BlurExtent: 0.727, Per: 0.01173, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\228_ASUS-ZENFONE-LIVE-ZB501KL_S.jpg, Quality: 54, BlurExtent: 0.454, Per: 0.00336, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\229_WILEYFOX-SWIFT-2-PLUS_S.jpg, Quality: 44, BlurExtent: 0.551, Per: 0.00880, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\22_HUAWEI-Y9_S.jpg, Quality: 36, BlurExtent: 0.632, Per: 0.00129, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\230_NOKIA-21_S.jpg, Quality: 0, BlurExtent: 0.994, Per: 0.00000, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\231_IPHONE-7-PLUS_S.jpg, Quality: 93, BlurExtent: 0.063, Per: 0.04137, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\232_SAMSUNG-EDGE-7C_S.jpg, Quality: 53, BlurExtent: 0.466, Per: 0.00968, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\233_XIAOMI-REDMI-4_S.jpg, Quality: 4, BlurExtent: 0.956, Per: 0.00076, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\234_XIAOMI-REDMI-NOTE-5A-PRIME_S.jpg, Quality: 19, BlurExtent: 0.803, Per: 0.00780, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\235_IPHONE-SE_S.jpg, Quality: 26, BlurExtent: 0.736, Per: 0.00283, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\236_IPHONE-SE_S.jpg, Quality: 58, BlurExtent: 0.419, Per: 0.01204, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\237_SAMSUNG-GALAXY-J5_S.jpg, Quality: 64, BlurExtent: 0.360, Per: 0.01230, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\238_HONOR-7X_S.jpg, Quality: 59, BlurExtent: 0.404, Per: 0.01570, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\239_IPHONE-6S_S.jpeg, Quality: 54, BlurExtent: 0.453, Per: 0.02173, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\23_HUAWEI-P20_S.jpg, Quality: 84, BlurExtent: 0.154, Per: 0.04531, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\240_HONOR-7X_S.jpg, Quality: 29, BlurExtent: 0.709, Per: 0.00057, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\241_HONOR-7X_S.jpg, Quality: 88, BlurExtent: 0.115, Per: 0.04491, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\242_IPHONE-6S_S.jpeg, Quality: 13, BlurExtent: 0.862, Per: 0.00372, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\243_HONOR-7X_S.jpg, Quality: 60, BlurExtent: 0.398, Per: 0.00965, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\244_HONOR-7X_S.jpg, Quality: 78, BlurExtent: 0.214, Per: 0.03576, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\245_HONOR-7X_S.jpg, Quality: 23, BlurExtent: 0.766, Per: 0.00162, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\246_HONOR-9_S.jpg, Quality: 28, BlurExtent: 0.710, Per: 0.00035, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\247_HONOR-7X_S.jpg, Quality: 24, BlurExtent: 0.753, Per: 0.00316, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\248_IPHONE-7_S.jpeg, Quality: 82, BlurExtent: 0.179, Per: 0.02277, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\249_IPHONE-SE_S.jpeg, Quality: 15, BlurExtent: 0.848, Per: 0.00103, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\24_HUAWEI-Y9_S.jpg, Quality: 18, BlurExtent: 0.810, Per: 0.00000, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\250_IPHONE-SE_S.jpeg, Quality: 21, BlurExtent: 0.780, Per: 0.00512, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\251_IPHONE-6S_S.jpeg, Quality: 13, BlurExtent: 0.865, Per: 0.00000, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\252_HUAWEI-P30_S.jpg, Quality: 62, BlurExtent: 0.378, Per: 0.00522, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\253_XIAOMI-REDMI-NOTE-7_S.jpg, Quality: 76, BlurExtent: 0.239, Per: 0.08312, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\254_XIAOMI-REDMI-7_S.jpg, Quality: 80, BlurExtent: 0.196, Per: 0.03905, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\255_XIAOMI-REDMI-7_S.jpg, Quality: 23, BlurExtent: 0.763, Per: 0.00103, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\256_SAMSUNG-GALAXY-GRAND-PRIME_S.jpg, Quality: 6, BlurExtent: 0.931, Per: 0.00000, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\257_HONOR-9_S.jpg, Quality: 25, BlurExtent: 0.743, Per: 0.00151, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\258_HONOR-10_S.jpg, Quality: 38, BlurExtent: 0.618, Per: 0.01952, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\259_XIAOMI-REDMI-7_S.jpg, Quality: 28, BlurExtent: 0.720, Per: 0.00522, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\25_HUAWEI-Y9_S.jpg, Quality: 95, BlurExtent: 0.044, Per: 0.06132, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\260_HUAWEI-NOVA-LITE_S.jpg, Quality: 57, BlurExtent: 0.421, Per: 0.01013, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\261_HONOR-10_S.jpg, Quality: 88, BlurExtent: 0.117, Per: 0.01557, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\262_IPHONE-SE_S.jpg, Quality: 40, BlurExtent: 0.599, Per: 0.00030, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\263_XIAOMI-REDMI-3S_S.jpg, Quality: 61, BlurExtent: 0.383, Per: 0.01685, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\264_IPHONE-7_S.jpeg, Quality: 62, BlurExtent: 0.379, Per: 0.01782, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\265_HONOR-9-LITE_S.jpg, Quality: 36, BlurExtent: 0.638, Per: 0.02968, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\266_SONY-NEX-5T_S.JPG, Quality: 68, BlurExtent: 0.313, Per: 0.07814, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\267_SONY-NEX-5T_S.JPG, Quality: 63, BlurExtent: 0.367, Per: 0.03765, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\268_NIKON-D3400-18-55MM_S.JPG, Quality: 68, BlurExtent: 0.315, Per: 0.00651, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\269_NIKON-D3400-18-55MM_S.JPG, Quality: 50, BlurExtent: 0.490, Per: 0.00151, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\26_HONOR-8X_S.jpg, Quality: 66, BlurExtent: 0.330, Per: 0.05069, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\270_NIKON-D3400-18-55MM_S.JPG, Quality: 73, BlurExtent: 0.268, Per: 0.00125, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\271_NIKON-D3400-18-55MM_S.JPG, Quality: 25, BlurExtent: 0.748, Per: 0.00021, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\272_NIKON-D3400-18-55MM_S.JPG, Quality: 17, BlurExtent: 0.822, Per: 0.00027, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\273_NIKON-D3400-18-55MM_S.JPG, Quality: 16, BlurExtent: 0.840, Per: 0.00068, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\274_NIKON-D3400-18-55MM_S.JPG, Quality: 18, BlurExtent: 0.812, Per: 0.00059, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\275_NIKON-D3400-18-55MM_S.JPG, Quality: 88, BlurExtent: 0.118, Per: 0.00274, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\276_NIKON-D3400-18-55MM_S.JPG, Quality: 45, BlurExtent: 0.545, Per: 0.00081, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\277_NIKON-D3400-18-55MM_S.JPG, Quality: 16, BlurExtent: 0.833, Per: 0.00047, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\278_HONOR-7X_S.jpg, Quality: 32, BlurExtent: 0.672, Per: 0.00305, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\279_NIKON-D3400-18-55MM_S.JPG, Quality: 9, BlurExtent: 0.909, Per: 0.00036, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\27_HONOR-8X_S.jpg, Quality: 69, BlurExtent: 0.301, Per: 0.07261, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\280_NIKON-D3400-18-55MM_S.JPG, Quality: 21, BlurExtent: 0.782, Per: 0.00030, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\281_NIKON-D3400-18-55MM_S.JPG, Quality: 41, BlurExtent: 0.586, Per: 0.00186, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\282_SONY-NEX-5T_S.JPG, Quality: 76, BlurExtent: 0.237, Per: 0.00875, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\283_HONOR-10_S.jpg, Quality: 64, BlurExtent: 0.356, Per: 0.02152, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\284_SONY-NEX-5T_S.JPG, Quality: 85, BlurExtent: 0.150, Per: 0.01019, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\285_SONY-NEX-5T_S.JPG, Quality: 89, BlurExtent: 0.106, Per: 0.05565, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\286_SONY-NEX-5T_S.JPG, Quality: 80, BlurExtent: 0.195, Per: 0.03629, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\287_WILEYFOX-SWIFT-2-PLUS_S.jpg, Quality: 38, BlurExtent: 0.613, Per: 0.03307, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\288_XIAOMI-REDMI-NOTE-7_S.jpg, Quality: 73, BlurExtent: 0.263, Per: 0.00943, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\289_WILEYFOX-SWIFT-2-PLUS_S.jpg, Quality: 13, BlurExtent: 0.869, Per: 0.00372, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\28_HONOR-8X_S.jpg, Quality: 44, BlurExtent: 0.553, Per: 0.01685, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\290_IPHONE-SE_S.jpg, Quality: 28, BlurExtent: 0.718, Per: 0.00386, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\291_IPHONE-SE_S.jpg, Quality: 16, BlurExtent: 0.838, Per: 0.00186, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\292_NIKON-D3400-35MM_S.JPG, Quality: 42, BlurExtent: 0.580, Per: 0.01949, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\293_NIKON-D3400-35MM_S.JPG, Quality: 65, BlurExtent: 0.343, Per: 0.00759, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\294_PRESTIGIO-MULTI-PHONE_S.jpg, Quality: 77, BlurExtent: 0.228, Per: 0.00815, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\295_HONOR-7X_S.jpg, Quality: 87, BlurExtent: 0.122, Per: 0.01348, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\296_NIKON-D3400-35MM_S.JPG, Quality: 78, BlurExtent: 0.217, Per: 0.01639, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\297_NIKON-D3400-35MM_S.JPG, Quality: 58, BlurExtent: 0.411, Per: 0.00037, is blur: False, Full image processed
+E:\Dataset\blur\archive\sharp\298_NIKON-D3400-35MM_S.JPG, Quality: 5, BlurExtent: 0.944, Per: 0.00000, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\299_NIKON-D3400-35MM_S.JPG, Quality: 80, BlurExtent: 0.196, Per: 0.12081, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\29_HONOR-7X_S.jpg, Quality: 16, BlurExtent: 0.832, Per: 0.00109, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\2_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 38, BlurExtent: 0.616, Per: 0.00598, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\300_XIAOMI-REDMI-NOTE-7_S.jpg, Quality: 100, BlurExtent: 0.000, Per: 0.03711, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\301_NIKON-D3400-35MM_S.JPG, Quality: 56, BlurExtent: 0.438, Per: 0.01853, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\302_IPHONE-SE_S.jpeg, Quality: 26, BlurExtent: 0.736, Per: 0.00853, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\303_SAMSUNG-GALAXY-A8_S.jpg, Quality: 28, BlurExtent: 0.713, Per: 0.01430, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\304_SAMSUNG-GALAXY-J7_S.jpg, Quality: 11, BlurExtent: 0.883, Per: 0.00034, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\305_HONOR-9_S.jpg, Quality: 80, BlurExtent: 0.200, Per: 0.00000, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\306_XIAOMI-REDMI-5-PLUS_S.jpg, Quality: 64, BlurExtent: 0.354, Per: 0.00380, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\307_HONOR-7X_S.jpg, Quality: 7, BlurExtent: 0.924, Per: 0.00000, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\308_IPHONE-6S_S.jpeg, Quality: 36, BlurExtent: 0.634, Per: 0.00423, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\309_SAMSUNG-GALAXY-A8_S.jpg, Quality: 13, BlurExtent: 0.862, Per: 0.00150, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\30_HONOR-8X_S.jpg, Quality: 73, BlurExtent: 0.261, Per: 0.18293, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\310_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 77, BlurExtent: 0.229, Per: 0.02021, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\311_HONOR-6X_S.jpg, Quality: 56, BlurExtent: 0.440, Per: 0.00590, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\312_ASUS-ZENFONE-LIVE-ZB501KL_S.jpg, Quality: 42, BlurExtent: 0.577, Per: 0.02554, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\313_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 60, BlurExtent: 0.390, Per: 0.05421, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\314_IPHONE-5S_S.jpeg, Quality: 53, BlurExtent: 0.470, Per: 0.00768, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\315_HUAWEI-NOVA-LITE_S.jpg, Quality: 17, BlurExtent: 0.829, Per: 0.00833, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\316_IPHONE-7_S.jpeg, Quality: 76, BlurExtent: 0.238, Per: 0.05093, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\317_IPHONE-8-PLUS_S.jpg, Quality: 16, BlurExtent: 0.831, Per: 0.00424, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\318_HONOR-7C_S.jpg, Quality: 65, BlurExtent: 0.348, Per: 0.01604, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\319_XIAOMI-REDMI-NOTE-4X_S.jpg, Quality: 63, BlurExtent: 0.365, Per: 0.03153, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\31_IPHONE-SE_S.jpg, Quality: 28, BlurExtent: 0.715, Per: 0.00349, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\320_HONOR-7X_S.jpg, Quality: 1, BlurExtent: 0.987, Per: 0.00000, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\321_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 67, BlurExtent: 0.329, Per: 0.04155, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\322_HONOR-7C_S.jpg, Quality: 1, BlurExtent: 0.987, Per: 0.00000, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\323_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 61, BlurExtent: 0.385, Per: 0.05438, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\324_ASUS-ZENFONE-LIVE-ZB501KL_S.jpg, Quality: 64, BlurExtent: 0.352, Per: 0.00711, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\325_SAMSUNG-GALAXY-J3_S.jpg, Quality: 17, BlurExtent: 0.828, Per: 0.00468, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\326_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 43, BlurExtent: 0.561, Per: 0.00875, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\327_IPHONE-SE_S.jpg, Quality: 95, BlurExtent: 0.048, Per: 0.00131, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\328_SAMSUNG-GALAXY-J3_S.jpg, Quality: 55, BlurExtent: 0.445, Per: 0.01578, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\329_HONOR-7C_S.jpg, Quality: 23, BlurExtent: 0.768, Per: 0.00299, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\32_HUAWEI-P-SMART_S.jpg, Quality: 55, BlurExtent: 0.449, Per: 0.01839, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\330_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 66, BlurExtent: 0.338, Per: 0.04874, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\331_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 74, BlurExtent: 0.251, Per: 0.04574, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\332_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 67, BlurExtent: 0.326, Per: 0.02481, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\333_HONOR-7X_S.jpg, Quality: 70, BlurExtent: 0.295, Per: 0.01449, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\334_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 69, BlurExtent: 0.308, Per: 0.00151, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\335_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 51, BlurExtent: 0.487, Per: 0.01277, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\336_ASUS-ZENFONE-LIVE-ZB501KL_S.jpg, Quality: 65, BlurExtent: 0.348, Per: 0.00651, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\337_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 36, BlurExtent: 0.632, Per: 0.00852, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\338_IPHONE-SE_S.jpg, Quality: 26, BlurExtent: 0.737, Per: 0.00436, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\339_XIAOMI-REDMI-4X_S.jpg, Quality: 56, BlurExtent: 0.440, Per: 0.00540, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\33_HONOR-8X_S.jpg, Quality: 26, BlurExtent: 0.735, Per: 0.00566, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\340_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 33, BlurExtent: 0.665, Per: 0.00705, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\341_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 21, BlurExtent: 0.780, Per: 0.00120, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\342_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 34, BlurExtent: 0.656, Per: 0.00254, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\343_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 55, BlurExtent: 0.444, Per: 0.01190, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\344_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 16, BlurExtent: 0.838, Per: 0.00222, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\345_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 28, BlurExtent: 0.720, Per: 0.00213, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\346_HUAWEI-MATE20_S.jpg, Quality: 75, BlurExtent: 0.249, Per: 0.05059, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\347_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 51, BlurExtent: 0.490, Per: 0.01486, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\348_IPHONE-8_S.JPG, Quality: 97, BlurExtent: 0.023, Per: 0.07566, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\349_IPHONE-SE_S.jpg, Quality: 29, BlurExtent: 0.704, Per: 0.00582, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\34_HONOR-8X_S.jpg, Quality: 68, BlurExtent: 0.316, Per: 0.01438, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\35_IPHONE-6S_S.jpeg, Quality: 33, BlurExtent: 0.670, Per: 0.00271, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\36_HONOR-8X_S.jpg, Quality: 27, BlurExtent: 0.724, Per: 0.00458, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\37_HONOR-8X_S.jpg, Quality: 63, BlurExtent: 0.362, Per: 0.02020, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\38_HONOR-8X_S.jpg, Quality: 79, BlurExtent: 0.208, Per: 0.06042, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\39_XIAOMI-MI8-LITE_S.jpg, Quality: 71, BlurExtent: 0.281, Per: 0.00377, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\3_HUAWEI-NOVA-LITE_S.jpg, Quality: 26, BlurExtent: 0.733, Per: 0.00228, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\40_IPHONE-6S_S.jpeg, Quality: 58, BlurExtent: 0.419, Per: 0.00923, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\41_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 27, BlurExtent: 0.722, Per: 0.00396, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\42_NIKON-D3400-35MM_S.JPG, Quality: 52, BlurExtent: 0.470, Per: 0.00517, is blur: False, Full image processed
+E:\Dataset\blur\archive\sharp\43_HONOR-8X_S.jpg, Quality: 84, BlurExtent: 0.157, Per: 0.08304, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\44_SONY-XPERIA-E5_S.jpg, Quality: 94, BlurExtent: 0.051, Per: 0.01190, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\45_HONOR-7X_S.jpg, Quality: 32, BlurExtent: 0.679, Per: 0.00061, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\46_IPHONE-8-PLUS_S.jpg, Quality: 63, BlurExtent: 0.364, Per: 0.00640, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\47_XIAOMI-REDMI-7_S.jpg, Quality: 38, BlurExtent: 0.616, Per: 0.02968, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\48_HONOR-8X_S.jpg, Quality: 36, BlurExtent: 0.639, Per: 0.01159, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\49_HONOR-8X_S.jpg, Quality: 66, BlurExtent: 0.330, Per: 0.02410, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\4_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 44, BlurExtent: 0.557, Per: 0.00309, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\50_HONOR-8X_S.jpg, Quality: 24, BlurExtent: 0.759, Per: 0.00179, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\51_IPHONE-SE_S.jpg, Quality: 15, BlurExtent: 0.846, Per: 0.00058, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\52_HONOR-8X_S.jpg, Quality: 25, BlurExtent: 0.747, Per: 0.01334, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\53_NIKON-D3400-35MM_S.JPG, Quality: 88, BlurExtent: 0.110, Per: 0.04736, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\54_HONOR-8X_S.jpg, Quality: 53, BlurExtent: 0.465, Per: 0.05099, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\55_HONOR-8X_S.jpg, Quality: 53, BlurExtent: 0.470, Per: 0.04617, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\56_HONOR-8X_S.jpg, Quality: 30, BlurExtent: 0.693, Per: 0.00174, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\57_IPHONE-SE_S.jpg, Quality: 52, BlurExtent: 0.475, Per: 0.01222, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\58_IPHONE-6S_S.jpeg, Quality: 10, BlurExtent: 0.893, Per: 0.00510, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\59_IPHONE-6S_S.jpg, Quality: 59, BlurExtent: 0.409, Per: 0.00042, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\5_XIAOMI-PROCOFONE-F1_S.jpg, Quality: 26, BlurExtent: 0.732, Per: 0.00333, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\60_IPHONE-8-PLUS_S.jpg, Quality: 9, BlurExtent: 0.908, Per: 0.00034, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\61_XIAOMI-REDMI-7_S.jpg, Quality: 34, BlurExtent: 0.652, Per: 0.01558, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\62_HONOR-8X_S.jpg, Quality: 51, BlurExtent: 0.489, Per: 0.04146, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\63_HUAWEI-P20_S.jpg, Quality: 62, BlurExtent: 0.372, Per: 0.04183, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\64_SAMSUNG-GALAXY-S5_S.jpg, Quality: 9, BlurExtent: 0.904, Per: 0.00000, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\65_NIKON-D3400-35MM_S.JPG, Quality: 36, BlurExtent: 0.633, Per: 0.00974, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\66_HONOR-8X_S.jpg, Quality: 14, BlurExtent: 0.852, Per: 0.00197, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\67_HONOR-8X_S.jpg, Quality: 13, BlurExtent: 0.862, Per: 0.01488, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\68_HONOR-8X_S.jpg, Quality: 38, BlurExtent: 0.614, Per: 0.00337, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\69_SAMSUNG-GALAXY-J3_S.jpg, Quality: 35, BlurExtent: 0.645, Per: 0.00464, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\6_HUAWEI-MATE20_S.jpg, Quality: 97, BlurExtent: 0.024, Per: 0.10768, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\70_HONOR-8X_S.jpg, Quality: 30, BlurExtent: 0.696, Per: 0.00585, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\71_SAMSUNG-GALAXY-A6_S.jpg, Quality: 31, BlurExtent: 0.687, Per: 0.01165, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\72_IPHONE-8_S.jpg, Quality: 51, BlurExtent: 0.487, Per: 0.00151, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\73_PANASONIC-DMC-TZ35_S.JPG, Quality: 96, BlurExtent: 0.033, Per: 0.00391, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\74_HONOR-8X_S.jpg, Quality: 15, BlurExtent: 0.845, Per: 0.00228, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\75_HONOR-8X_S.jpg, Quality: 53, BlurExtent: 0.463, Per: 0.02065, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\76_HONOR-8X_S.jpg, Quality: 95, BlurExtent: 0.050, Per: 0.00362, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\77_HONOR-7C_S.jpg, Quality: 71, BlurExtent: 0.285, Per: 0.00356, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\78_NIKON-D3400-35MM_S.JPG, Quality: 66, BlurExtent: 0.332, Per: 0.01419, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\79_HUAWEI-P30-PRO_S.jpg, Quality: 62, BlurExtent: 0.378, Per: 0.01143, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\7_NIKON-D3400-35MM_S.JPG, Quality: 83, BlurExtent: 0.161, Per: 0.07668, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\80_HUAWEI-P30-PRO_S.jpg, Quality: 50, BlurExtent: 0.496, Per: 0.00216, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\81_SAMSUNG-GALAXY-J3_S.jpg, Quality: 38, BlurExtent: 0.612, Per: 0.00737, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\82_HONOR-8X_S.jpg, Quality: 27, BlurExtent: 0.724, Per: 0.00359, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\83_HONOR-8X_S.jpg, Quality: 25, BlurExtent: 0.745, Per: 0.00722, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\84_IPHONE-XR_S.jpeg, Quality: 65, BlurExtent: 0.344, Per: 0.00544, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\85_HONOR-8X_S.jpg, Quality: 57, BlurExtent: 0.429, Per: 0.02136, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\86_HONOR-8X_S.jpg, Quality: 18, BlurExtent: 0.812, Per: 0.00541, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\87_IPHONE-8-PLUS_S.jpg, Quality: 87, BlurExtent: 0.129, Per: 0.00742, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\88_HONOR-8X_S.jpg, Quality: 24, BlurExtent: 0.756, Per: 0.00217, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\89_IPHONE-6S_S.jpeg, Quality: 3, BlurExtent: 0.960, Per: 0.00000, is blur: True, Center-only processed
+E:\Dataset\blur\archive\sharp\8_SAMSUNG-GALAXY-A6_S.jpg, Quality: 93, BlurExtent: 0.061, Per: 0.00500, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\90_HONOR-7X_S.jpg, Quality: 69, BlurExtent: 0.309, Per: 0.01025, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\91_HONOR-7X_S.jpg, Quality: 12, BlurExtent: 0.875, Per: 0.00160, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\92_IPHONE-7_S.jpeg, Quality: 17, BlurExtent: 0.826, Per: 0.00140, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\93_HONOR-7X_S.jpg, Quality: 56, BlurExtent: 0.434, Per: 0.02077, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\94_HONOR-7X_S.jpg, Quality: 53, BlurExtent: 0.468, Per: 0.01570, is blur: False, Full image processed
+E:\Dataset\blur\archive\sharp\95_HONOR-7X_S.jpg, Quality: 58, BlurExtent: 0.412, Per: 0.00474, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\96_HONOR-7X_S.jpg, Quality: 35, BlurExtent: 0.641, Per: 0.01362, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\97_HONOR-7X_S.jpg, Quality: 36, BlurExtent: 0.638, Per: 0.00178, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\98_HONOR-7X_S.jpg, Quality: 29, BlurExtent: 0.704, Per: 0.00396, is blur: True, Full image processed
+E:\Dataset\blur\archive\sharp\99_HONOR-7X_S.jpg, Quality: 61, BlurExtent: 0.383, Per: 0.01729, is blur: False, Center-only processed
+E:\Dataset\blur\archive\sharp\9_HUAWEI-P20_S.jpg, Quality: 70, BlurExtent: 0.298, Per: 0.02971, is blur: False, Center-only processed
