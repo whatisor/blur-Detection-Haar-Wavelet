@@ -321,8 +321,13 @@ def create_false_cases_display(false_cases):
     cv2.imshow(false_window_name, false_display)
     
     print("False cases window opened. Press any key to close...")
-    cv2.waitKey(0)
+    key = cv2.waitKey(0) & 0xFF
     cv2.destroyWindow(false_window_name)
+
+    if key == ord('q'):
+        return True
+    else:
+        return False
 
 
 def find_images(input_dir):

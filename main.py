@@ -10,6 +10,7 @@ import cv2
 import os
 import argparse
 import json
+import numpy as np
 
 # Import our modules
 from detector import advanced_blur_detect
@@ -19,6 +20,26 @@ from utils import (
     find_images, 
     setup_window
 )
+
+
+def convert_numpy_types(obj):
+    """Convert NumPy data types to JSON-serializable Python types"""
+    if isinstance(obj, np.integer):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, np.bool_):
+        return bool(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, dict):
+        return {key: convert_numpy_types(value) for key, value in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_numpy_types(item) for item in obj]
+    elif isinstance(obj, tuple):
+        return tuple(convert_numpy_types(item) for item in obj)
+    else:
+        return obj
 
 
 def main():
@@ -125,7 +146,10 @@ Window Controls:
                         'per': per
                     })
                     if len(false_cases) < 50:
-                        display_intermediate_results(I, result, input_path)
+                        key = display_intermediate_results(I, result, input_path)
+                        if key == ord('q'):
+                            print("Exiting...")
+                            break
 
                     print(f"FALSE CASE: {input_path} - Should be {'Blur' if expected_classification else 'Sharp'}, got {'Blur' if classification else 'Sharp'}")
             
@@ -165,8 +189,11 @@ Window Controls:
     if args.save_path:
         assert os.path.splitext(args.save_path)[1] == ".json", "You must include the extension .json on the end of the save path"
         
+        # Convert NumPy types to JSON-serializable Python types
+        serializable_results = convert_numpy_types(results)
+        
         with open(args.save_path, 'w') as outfile:
-            json.dump(results, outfile, sort_keys=True, indent=4)
+            json.dump(serializable_results, outfile, sort_keys=True, indent=4)
             outfile.write("\n")
         
         print(f"📁 Results saved to: {args.save_path}")

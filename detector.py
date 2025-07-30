@@ -310,6 +310,9 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
     
     # Calculate final quality score and classification using BlurExtent with feature density adjustment
     quality_score = calculate_quality_score(final_blurext)
+
+    # Use the higher quality score between center and full image because focus feature maybe it not center.
+    quality_score = max(quality_score, center_quality)
     
     # Enhanced classification logic that considers feature density
     if is_low_feature:
