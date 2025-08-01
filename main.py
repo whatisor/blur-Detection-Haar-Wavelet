@@ -18,7 +18,8 @@ from utils import (
     display_intermediate_results, 
     create_false_cases_display, 
     find_images, 
-    setup_window
+    setup_window,
+    visualize_quality_distribution
 )
 
 
@@ -45,13 +46,17 @@ def convert_numpy_types(obj):
 def main():
     """Main function for blur detection application"""
     parser = argparse.ArgumentParser(
-        description='Advanced Haar Wavelet blur detection with feature density analysis',
+        description='Advanced Haar Wavelet blur detection with feature density analysis and dark image enhancement',
         epilog='''
 Examples:
   python main.py -i images/                                    # Basic usage
   python main.py -i images/ --window-size 1600x1000           # Custom window size  
   python main.py -i images/ --show-false-cases sharp          # Show misclassified cases
   python main.py -i images/ --conservative-threshold 0.8      # Stricter for low-feature images
+  python main.py -i images/ --dark-threshold 60               # Adjust dark image detection sensitivity
+  python main.py -i images/ --enable-dark-enhancement         # Enable dark image processing
+  python main.py -i images/ --visualize-quality               # Show quality distribution plot
+  python main.py -i images/ --save-plot quality_dist.png      # Save quality plot to file
   
 Display Layout:
   - Main image with quality score prominently displayed on left
@@ -85,6 +90,14 @@ Window Controls:
                        help="sensitivity for low-feature detection (0.5-1.0, default: 0.75)")
     parser.add_argument("--window-size", dest='window_size', type=str, default="1200x800", 
                        help="initial window size in WIDTHxHEIGHT format (default: 1200x800)")
+    parser.add_argument("--dark-threshold", dest='dark_threshold', type=float, default=50, 
+                       help="brightness threshold to detect dark images (0-255, default: 50)")
+    parser.add_argument("--enable-dark-enhancement", dest='enable_dark_enhancement', action='store_true', 
+                       help="enable enhancement for dark images")
+    parser.add_argument("--visualize-quality", dest='visualize_quality', action='store_true', 
+                       help="show quality score distribution plot after processing")
+    parser.add_argument("--save-plot", dest='save_plot', type=str, 
+                       help="save quality distribution plot to specified path (e.g., 'quality_dist.png')")
     
     args = parser.parse_args()
     
@@ -105,13 +118,19 @@ Window Controls:
         setup_window(window_name, args.window_size)
     
     # Process all images
+    counter = 0
     for input_path in find_images(args.input_dir):
+        # For debug
+        # if counter > 10:
+        #    break;
+        # counter += 1
         try:
             I = cv2.imread(input_path)
             
-            # Use advanced blur detection with center-first approach and feature density check
+            # Use advanced blur detection with center-first approach, feature density check, and dark image enhancement
             result = advanced_blur_detect(I, args.threshold, args.MinZero, 
-                                        args.conservative_threshold, args.feature_sensitivity)
+                                        args.conservative_threshold, args.feature_sensitivity,
+                                        args.dark_threshold, args.enable_dark_enhancement)
             
             # Extract values for compatibility and output
             per = result['per']
@@ -130,7 +149,8 @@ Window Controls:
                 "center_quality": result['center_quality'],
                 "processing_method": processing_info,
                 "is_low_feature": result.get('is_low_feature', False),  # Feature density analysis
-                "feature_metrics": result.get('feature_metrics', {})  # Detailed feature analysis
+                "feature_metrics": result.get('feature_metrics', {}),  # Detailed feature analysis
+                "is_dark_processed": result.get('is_dark_processed', False)  # Dark image enhancement applied
             })
             
             # Check for false cases if enabled
@@ -153,10 +173,11 @@ Window Controls:
 
                     print(f"FALSE CASE: {input_path} - Should be {'Blur' if expected_classification else 'Sharp'}, got {'Blur' if classification else 'Sharp'}")
             
-            # Enhanced console output with feature density info
+            # Enhanced console output with feature density and dark image processing info
             feature_status = "Low-feature" if result.get('is_low_feature', False) else "Normal-feature"
-            print("{0}, Quality: {1}, BlurExtent: {2:.3f}, Per: {3:.5f}, is blur: {4}, {5}, {6}".format(
-                input_path, quality_score, blurext, per, classification, processing_info, feature_status))
+            dark_status = "Dark-enhanced" if result.get('is_dark_processed', False) else "Normal-brightness"
+            print("{0}, Quality: {1}, BlurExtent: {2:.3f}, Per: {3:.5f}, is blur: {4}, {5}, {6}, {7}".format(
+                input_path, quality_score, blurext, per, classification, processing_info, feature_status, dark_status))
             
             # Display intermediate results if not disabled
             if not args.no_display:
@@ -197,6 +218,23 @@ Window Controls:
             outfile.write("\n")
         
         print(f"📁 Results saved to: {args.save_path}")
+    
+    # Visualize quality distribution if requested
+    if args.visualize_quality or args.save_plot:
+        print("\n📊 Generating quality distribution analysis...")
+        stats = visualize_quality_distribution(
+            results, 
+            save_path=args.save_plot,
+            show_plot=args.visualize_quality
+        )
+        
+        if stats:
+            print(f"📈 Analysis complete: {stats['total_images']} images processed")
+            print(f"   Overall quality: {stats['overall_mean']:.1f} ± {stats['overall_std']:.1f}")
+            print(f"   Sharp: {stats['sharp_images']} images (avg: {stats['sharp_mean']:.1f})")
+            print(f"   Blur: {stats['blur_images']} images (avg: {stats['blur_mean']:.1f})")
+            if stats['dark_enhanced_count'] > 0:
+                print(f"   Dark enhanced: {stats['dark_enhanced_count']} images (avg: {stats['dark_enhanced_mean']:.1f})")
         
 
 if __name__ == '__main__':                

@@ -93,22 +93,112 @@ def is_low_feature_image(feature_metrics, sensitivity=0.75):
     return low_feature_count >= (total_metrics * sensitivity)
 
 
-def blur_detect(img, threshold):
+def is_dark_image(img, dark_threshold=50):
+    """Detect if image is dark based on brightness statistics"""
+    if len(img.shape) == 3:
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    else:
+        gray = img.copy()
+    
+    # Calculate brightness metrics
+    mean_brightness = np.mean(gray)
+    median_brightness = np.median(gray)
+    
+    # Image is considered dark if both mean and median are below threshold
+    return mean_brightness < dark_threshold and median_brightness < dark_threshold
+
+
+def enhance_dark_image(img, method='clahe'):
     """
-    Core Haar wavelet blur detection algorithm
+    Enhance dark images for better blur detection
+    
+    Args:
+        img: Input grayscale image
+        method: Enhancement method ('clahe', 'gamma', 'combined')
+        
+    Returns:
+        Enhanced grayscale image
+    """
+    if method == 'clahe':
+        # Contrast Limited Adaptive Histogram Equalization
+        clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
+        return clahe.apply(img)
+    
+    elif method == 'gamma':
+        # Gamma correction for dark images
+        gamma = 0.5  # Makes dark areas brighter
+        inv_gamma = 1.0 / gamma
+        table = np.array([((i / 255.0) ** inv_gamma) * 255 for i in np.arange(0, 256)]).astype("uint8")
+        return cv2.LUT(img, table)
+    
+    elif method == 'combined':
+        # Apply both CLAHE and mild gamma correction
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+        enhanced = clahe.apply(img)
+        
+        # Mild gamma correction
+        gamma = 0.7
+        inv_gamma = 1.0 / gamma
+        table = np.array([((i / 255.0) ** inv_gamma) * 255 for i in np.arange(0, 256)]).astype("uint8")
+        return cv2.LUT(enhanced, table)
+    
+    else:
+        return img
+
+
+def calculate_adaptive_threshold(edge_maps, base_threshold, is_dark=False):
+    """
+    Calculate adaptive thresholds based on edge magnitude distribution
+    
+    Args:
+        edge_maps: Tuple of (E1, E2, E3) edge magnitude maps
+        base_threshold: Original threshold value
+        is_dark: Whether the image is detected as dark
+        
+    Returns:
+        Tuple of adaptive thresholds for each scale
+    """
+    E1, E2, E3 = edge_maps
+    
+    if is_dark:
+        # For dark images, use percentile-based thresholds
+        # This adapts to the actual distribution of edge magnitudes
+        thresh1 = max(np.percentile(E1.flatten(), 85), base_threshold * 0.3)
+        thresh2 = max(np.percentile(E2.flatten(), 85), base_threshold * 0.3) 
+        thresh3 = max(np.percentile(E3.flatten(), 85), base_threshold * 0.3)
+    else:
+        # For normal images, use the original thresholds
+        thresh1 = thresh2 = thresh3 = base_threshold
+    
+    return thresh1, thresh2, thresh3
+
+
+def blur_detect(img, threshold, dark_threshold=50, enable_dark_enhancement=True):
+    """
+    Core Haar wavelet blur detection algorithm with dark image enhancement
     
     Args:
         img: Input image (BGR format)
         threshold: Edge detection threshold
+        dark_threshold: Brightness threshold to detect dark images (0-255)
+        enable_dark_enhancement: Whether to apply enhancement for dark images
         
     Returns:
-        tuple: (Per, BlurExtent, E1, E2, E3)
+        tuple: (Per, BlurExtent, E1, E2, E3, is_dark_processed)
             - Per: Percentage of sharp edge structures
             - BlurExtent: Blur extent ratio (0-1, higher = more blur)
             - E1, E2, E3: Edge maps at different scales
+            - is_dark_processed: Whether dark image enhancement was applied
     """
     # Convert image to grayscale
     Y = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    
+    # Detect if image is dark and apply enhancement if needed
+    is_dark = is_dark_image(Y, dark_threshold)
+    is_dark_processed = False
+    if is_dark and enable_dark_enhancement:
+        Y = enhance_dark_image(Y, method='combined')  # Use combined enhancement for best results
+        is_dark_processed = True
     
     M, N = Y.shape
     
@@ -193,10 +283,11 @@ def blur_detect(img, threshold):
             y3 = y3 + sizeN3
             count += 1
     
-    # Step 3
-    EdgePoint1 = Emax1 > threshold
-    EdgePoint2 = Emax2 > threshold
-    EdgePoint3 = Emax3 > threshold
+    # Step 3 - Use adaptive thresholds for dark images
+    thresh1, thresh2, thresh3 = calculate_adaptive_threshold((E1, E2, E3), threshold, is_dark)
+    EdgePoint1 = Emax1 > thresh1
+    EdgePoint2 = Emax2 > thresh2
+    EdgePoint3 = Emax3 > thresh3
     
     # Rule 1 Edge Points
     EdgePoint = EdgePoint1 + EdgePoint2 + EdgePoint3
@@ -227,7 +318,7 @@ def blur_detect(img, threshold):
 
     for i in range(n_edges):
         if RGstructure[i] == 1 or RSstructure[i] == 1:
-            if Emax1[i] < threshold:
+            if Emax1[i] < thresh1:  # Use adaptive threshold for consistency
                 BlurC[i] = 1                        
         
     # Step 6
@@ -243,12 +334,13 @@ def blur_detect(img, threshold):
     else:
         BlurExtent = np.sum(BlurC) / (np.sum(RGstructure) + np.sum(RSstructure))
     
-    return Per, BlurExtent, E1, E2, E3
+    return Per, BlurExtent, E1, E2, E3, is_dark_processed
 
 
-def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_threshold=0.7, feature_sensitivity=0.75):
+def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_threshold=0.7, feature_sensitivity=0.75, 
+                        dark_threshold=50, enable_dark_enhancement=False):
     """
-    Advanced blur detection with center-first approach and feature density check
+    Advanced blur detection with center-first approach, feature density check, and dark image enhancement
     
     Args:
         img: Input image (BGR format)
@@ -256,6 +348,8 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
         min_zero_threshold: Minimum threshold for Per value
         conservative_threshold: Higher threshold for low-feature images
         feature_sensitivity: Sensitivity for low-feature detection
+        dark_threshold: Brightness threshold to detect dark images (0-255)
+        enable_dark_enhancement: Whether to apply enhancement for dark images
         
     Returns:
         dict: Complete analysis results including quality score, classification, and metadata
@@ -270,7 +364,8 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
     
     # Step 1: Detect blur on center region (50% width, 50% height)
     center_img = extract_center_region(img, 0.5)
-    center_per, center_blurext, center_E1, center_E2, center_E3 = blur_detect(center_img, threshold)
+    center_per, center_blurext, center_E1, center_E2, center_E3, center_dark_processed = blur_detect(
+        center_img, threshold, dark_threshold, enable_dark_enhancement)
     
     # Step 1.5: Analyze feature density to detect low-feature images
     feature_metrics = calculate_feature_density(center_img, threshold)
@@ -286,19 +381,23 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
     # - BlurExtent < 0.3: Center is clear, likely whole image is clear → use center result
     # - BlurExtent > 0.8: Center is very blurry, likely whole image is blurry → use center result  
     # - BlurExtent 0.3-0.8: Uncertain case, need full image analysis for accurate assessment
-    process_full = 0.3 <= center_blurext <= 0.8
+    # We actually always need to process full image because sometime image center is mostly non-feature.
+    process_full = True #0.3 <= center_blurext <= 0.8
     
     if process_full:
         # Process full image
-        full_per, full_blurext, full_E1, full_E2, full_E3 = blur_detect(img, threshold)
+        full_per, full_blurext, full_E1, full_E2, full_E3, full_dark_processed = blur_detect(
+            img, threshold, dark_threshold, enable_dark_enhancement)
         final_per = full_per
         final_blurext = full_blurext
         final_E1, final_E2, final_E3 = full_E1, full_E2, full_E3
+        dark_processed = full_dark_processed
         processing_info = "Full image processed"
     else:
         # Use center results - resize edge maps to match full image scale for visualization
         final_per = center_per
         final_blurext = center_blurext
+        dark_processed = center_dark_processed
         
         # Scale edge maps to represent full image dimensions for consistent visualization
         scale_factor = 2  # Center is 50% of original
@@ -308,11 +407,9 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
         
         processing_info = "Center-only processed"
     
+    final_blurext = min(final_blurext, center_blurext)
     # Calculate final quality score and classification using BlurExtent with feature density adjustment
     quality_score = calculate_quality_score(final_blurext)
-
-    # Use the higher quality score between center and full image because focus feature maybe it not center.
-    quality_score = max(quality_score, center_quality)
     
     # Enhanced classification logic that considers feature density
     if is_low_feature:
@@ -322,8 +419,12 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
         processing_note = f"{processing_info} (Low-feature detected, conservative threshold {conservative_threshold} used)"
     else:
         # Standard classification for normal feature density images
-        classification = final_blurext > 0.5
+        classification = final_blurext < min_zero_threshold
         processing_note = processing_info
+    
+    # Add dark image processing information
+    if dark_processed:
+        processing_note += " (Dark image enhancement applied)"
     
     return {
         'per': final_per,  # Percentage of sharp edge structures (0-1, higher = sharper edges)
@@ -332,8 +433,9 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
         'classification': classification,  # Enhanced classification considering feature density
         'edge_maps': (final_E1, final_E2, final_E3),
         'center_quality': center_quality,
-        'processing_info': processing_note,  # Updated to include feature density info
+        'processing_info': processing_note,  # Updated to include feature density and dark image info
         'processed_full': process_full,
         'is_low_feature': is_low_feature,  # Whether image has low feature density
-        'feature_metrics': feature_metrics  # Detailed feature analysis
+        'feature_metrics': feature_metrics,  # Detailed feature analysis
+        'is_dark_processed': dark_processed  # Whether dark image enhancement was applied
     } 

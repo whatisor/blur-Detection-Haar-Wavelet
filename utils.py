@@ -10,6 +10,13 @@ import cv2
 import numpy as np
 import os
 
+try:
+    import matplotlib.pyplot as plt
+    import matplotlib.patches as mpatches
+    MATPLOTLIB_AVAILABLE = True
+except ImportError:
+    MATPLOTLIB_AVAILABLE = False
+
 
 def calculate_quality_score(blur_extent):
     """Convert BlurExtent to quality score (0-100)"""
@@ -354,3 +361,159 @@ def setup_window(window_name, window_size):
         cv2.resizeWindow(window_name, 1200, 800)
         print(f"📺 Invalid window size format '{window_size}', using default 1200x800")
         return False 
+
+
+def visualize_quality_distribution(results, save_path=None, show_plot=True):
+    """
+    Visualize quality score distribution with comprehensive analysis
+    
+    Args:
+        results: List of result dictionaries containing quality scores and classifications
+        save_path: Optional path to save the plot (e.g., 'quality_distribution.png')
+        show_plot: Whether to display the plot interactively
+        
+    Returns:
+        dict: Statistics about the quality distribution
+    """
+    if not MATPLOTLIB_AVAILABLE:
+        print("❌ Error: matplotlib not available. Install with: pip install matplotlib")
+        return None
+    
+    if not results:
+        print("❌ Error: No results to visualize")
+        return None
+    
+    # Extract data
+    quality_scores = [r['quality_score'] for r in results]
+    blur_classifications = [r['is_blur'] for r in results]
+    dark_processed = [r.get('is_dark_processed', False) for r in results]
+    low_feature = [r.get('is_low_feature', False) for r in results]
+    blur_extents = [r['blur_extent'] for r in results]
+    pers = [r['per'] for r in results]
+    
+    # Separate scores by classification
+    sharp_scores = [q for q, is_blur in zip(quality_scores, blur_classifications) if not is_blur]
+    blur_scores = [q for q, is_blur in zip(quality_scores, blur_classifications) if is_blur]
+    sharp_blur_extents = [b for b, is_blur in zip(blur_extents, blur_classifications) if not is_blur]
+    blur_blur_extents = [b for b, is_blur in zip(blur_extents, blur_classifications) if is_blur]
+    sharp_pers = [p for p, is_blur in zip(pers, blur_classifications) if not is_blur]
+    blur_pers = [p for p, is_blur in zip(pers, blur_classifications) if is_blur]
+    
+    # Separate by processing type
+    dark_enhanced_scores = [q for q, is_dark in zip(quality_scores, dark_processed) if is_dark]
+    normal_brightness_scores = [q for q, is_dark in zip(quality_scores, dark_processed) if not is_dark]
+    
+    # Calculate statistics
+    stats = {
+        'total_images': len(results),
+        'overall_mean': np.mean(quality_scores),
+        'overall_median': np.median(quality_scores),
+        'overall_std': np.std(quality_scores),
+        'sharp_images': len(sharp_scores),
+        'blur_images': len(blur_scores),
+        'sharp_mean': np.mean(sharp_scores) if sharp_scores else 0,
+        'blur_mean': np.mean(blur_scores) if blur_scores else 0,
+        'dark_enhanced_count': len(dark_enhanced_scores),
+        'dark_enhanced_mean': np.mean(dark_enhanced_scores) if dark_enhanced_scores else 0,
+        'low_feature_count': sum(low_feature)
+    }
+    
+    # Create the visualization
+    fig, axs = plt.subplots(3, 2, figsize=(18, 16))
+    fig.suptitle('Quality Score, Blur Extent, and Per Distribution Analysis', fontsize=16, fontweight='bold')
+    
+    # 1. Overall quality distribution
+    ax1 = axs[0, 0]
+    ax1.hist(quality_scores, bins=20, alpha=0.7, color='skyblue', edgecolor='black')
+    ax1.axvline(stats['overall_mean'], color='red', linestyle='--', linewidth=2, label=f'Mean: {stats["overall_mean"]:.1f}')
+    ax1.axvline(stats['overall_median'], color='orange', linestyle='--', linewidth=2, label=f'Median: {stats["overall_median"]:.1f}')
+    ax1.set_xlabel('Quality Score')
+    ax1.set_ylabel('Frequency')
+    ax1.set_title(f'Overall Quality Distribution (n={stats["total_images"]})')
+    ax1.legend()
+    ax1.grid(True, alpha=0.3)
+    
+    # 2. Sharp vs Blur quality comparison
+    ax2 = axs[0, 1]
+    bins = np.linspace(0, 100, 21)
+    ax2.hist([sharp_scores, blur_scores], bins=bins, alpha=0.7, 
+             color=['green', 'red'], label=['Sharp', 'Blur'], edgecolor='black')
+    ax2.set_xlabel('Quality Score')
+    ax2.set_ylabel('Frequency')
+    ax2.set_title(f'Sharp vs Blur Quality\nSharp: {len(sharp_scores)}, Blur: {len(blur_scores)}')
+    ax2.legend()
+    ax2.grid(True, alpha=0.3)
+    
+    # 3. Blur Extent distribution (sharp vs blur)
+    ax3 = axs[1, 0]
+    bins_blur = np.linspace(0, 1, 21)
+    ax3.hist([sharp_blur_extents, blur_blur_extents], bins=bins_blur, alpha=0.7, 
+             color=['green', 'red'], label=['Sharp', 'Blur'], edgecolor='black')
+    ax3.set_xlabel('Blur Extent')
+    ax3.set_ylabel('Frequency')
+    ax3.set_title('Blur Extent Distribution (Sharp vs Blur)')
+    ax3.legend()
+    ax3.grid(True, alpha=0.3)
+    
+    # 4. Per distribution (sharp vs blur)
+    ax4 = axs[1, 1]
+    bins_per = np.linspace(0, 1, 21)
+    ax4.hist([sharp_pers, blur_pers], bins=bins_per, alpha=0.7, 
+             color=['green', 'red'], label=['Sharp', 'Blur'], edgecolor='black')
+    ax4.set_xlabel('Per (Edge Structure)')
+    ax4.set_ylabel('Frequency')
+    ax4.set_title('Per Distribution (Sharp vs Blur)')
+    ax4.legend()
+    ax4.grid(True, alpha=0.3)
+    
+    # 5. Scatter plot: Blur Extent vs Per, colored by classification
+    ax5 = axs[2, 0]
+    scatter = ax5.scatter(blur_extents, pers, c=blur_classifications, cmap='coolwarm', alpha=0.7, edgecolor='k')
+    ax5.set_xlabel('Blur Extent')
+    ax5.set_ylabel('Per (Edge Structure)')
+    ax5.set_title('Blur Extent vs Per (Color: Blur=1, Sharp=0)')
+    legend1 = ax5.legend(*scatter.legend_elements(), title="is_blur", loc="upper right")
+    ax5.add_artist(legend1)
+    ax5.grid(True, alpha=0.3)
+    
+    # 6. Statistics summary
+    ax6 = axs[2, 1]
+    ax6.axis('off')
+    stats_text = f"""
+    📊 QUALITY STATISTICS
+    
+    Total Images: {stats['total_images']}
+    Overall Mean: {stats['overall_mean']:.1f} ± {stats['overall_std']:.1f}
+    Overall Median: {stats['overall_median']:.1f}
+    
+    📈 CLASSIFICATION BREAKDOWN
+    Sharp Images: {stats['sharp_images']} (Mean: {stats['sharp_mean']:.1f})
+    Blur Images: {stats['blur_images']} (Mean: {stats['blur_mean']:.1f})
+    
+    🌙 PROCESSING BREAKDOWN  
+    Dark Enhanced: {stats['dark_enhanced_count']} (Mean: {stats['dark_enhanced_mean']:.1f})
+    Normal Brightness: {len(normal_brightness_scores)}
+    Low Feature Images: {stats['low_feature_count']}
+    
+    📋 QUALITY RANGES
+    Excellent (90-100): {sum(1 for q in quality_scores if q >= 90)}
+    Good (70-89): {sum(1 for q in quality_scores if 70 <= q < 90)}
+    Fair (50-69): {sum(1 for q in quality_scores if 50 <= q < 70)}
+    Poor (0-49): {sum(1 for q in quality_scores if q < 50)}
+    """
+    ax6.text(0.05, 0.95, stats_text, transform=ax6.transAxes, fontsize=11,
+             verticalalignment='top', fontfamily='monospace',
+             bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.8))
+    
+    plt.tight_layout(rect=[0, 0, 1, 0.97])
+    
+    # Save plot if requested
+    if save_path:
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+        print(f"📊 Quality distribution plot saved to: {save_path}")
+    
+    # Show plot if requested
+    if show_plot:
+        plt.show()
+    
+    return stats 
