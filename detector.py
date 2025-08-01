@@ -408,6 +408,7 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
         processing_info = "Center-only processed"
     
     final_blurext = min(final_blurext, center_blurext)
+    final_per = max(final_per, center_per)
     # Calculate final quality score and classification using BlurExtent with feature density adjustment
     quality_score = calculate_quality_score(final_blurext)
     
@@ -415,11 +416,15 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
     if is_low_feature:
         # For low-feature images, be more conservative about blur classification
         # Require higher BlurExtent threshold to classify as blurred
-        classification = final_blurext > conservative_threshold
+        #classification = final_per < conservative_threshold * min_zero_threshold
+        # Default require 90% confidence( quality score < 10) to classify as blurred event.
+        classification = quality_score < 10 / conservative_threshold #final_per < conservative_threshold * min_zero_threshold
         processing_note = f"{processing_info} (Low-feature detected, conservative threshold {conservative_threshold} used)"
     else:
         # Standard classification for normal feature density images
-        classification = final_blurext < min_zero_threshold
+        #classification = final_per < min_zero_threshold
+        # Default require 90% confidence( quality score < 10) to classify as blurred event.
+        classification = quality_score < 10 #final_per < min_zero_threshold
         processing_note = processing_info
     
     # Add dark image processing information
