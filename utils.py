@@ -56,7 +56,7 @@ def get_quality_color(quality_score):
     return (blue, green, red)
 
 
-def display_intermediate_results(img, result_dict, input_path):
+def display_intermediate_results(img, result_dict, input_path, manual = True):
     """
     Display the original image and intermediate edge maps with quality score
     Uses fixed window dimensions and consistent text sizing regardless of input image size
@@ -245,7 +245,10 @@ def display_intermediate_results(img, result_dict, input_path):
     cv2.imshow('Advanced Blur Detection - Main Focus | Edge Sidebar', combined_display)
     
     # Wait for key press
-    key = cv2.waitKey(0) & 0xFF
+    if manual:
+        key = cv2.waitKey(0) & 0xFF
+    else:
+        key = cv2.waitKey(1) & 0xFF
     return key
 
 

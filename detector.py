@@ -290,7 +290,7 @@ def blur_detect(img, threshold, dark_threshold=50, enable_dark_enhancement=True)
     EdgePoint3 = Emax3 > thresh3
     
     # Rule 1 Edge Points
-    EdgePoint = EdgePoint1 + EdgePoint2 + EdgePoint3
+    EdgePoint = EdgePoint1 | EdgePoint2 | EdgePoint3  # Creates boolean True/False
     
     n_edges = EdgePoint.shape[0]
     
