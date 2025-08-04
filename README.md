@@ -301,3 +301,6 @@ from detector import advanced_blur_detect
 from utils import display_intermediate_results
 ```
 
+### Binary with default IPs
+ ./camera.exe -c 169.254.7.206:9080 169.254.200.200:9080
+
