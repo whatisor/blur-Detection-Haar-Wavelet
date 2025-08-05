@@ -26,19 +26,19 @@ def draw_text_sharp(img, text, pos, font, scale, color, thickness, outline_color
         outline_thickness = thickness + 1
     
     # Draw outline for contrast (no antialiasing)
-    cv2.putText(img, text, pos, font, scale, outline_color, outline_thickness)
+    #cv2.putText(img, text, pos, font, scale, outline_color, outline_thickness)
     # Draw main text (no antialiasing for crisp edges)
-    cv2.putText(img, text, pos, font, scale, color, thickness)
+    cv2.putText(img, text, pos, font, scale, color, 1,cv2.LINE_AA)
 
 
 def draw_text_extra_sharp(img, text, pos, font, scale, color, thickness):
     """Draw extra sharp text with multiple passes for better edge definition"""
     # Multiple thin passes for sharper, more defined edges
-    for offset in [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]:
-        cv2.putText(img, text, (pos[0] + offset[0], pos[1] + offset[1]), 
-                   font, scale, (0, 0, 0), thickness)
+    # for offset in [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]:
+    #     cv2.putText(img, text, (pos[0] + offset[0], pos[1] + offset[1]), 
+    #                font, scale, (0, 0, 0), thickness)
     # Main text on top
-    cv2.putText(img, text, pos, font, scale, color, thickness)
+    cv2.putText(img, text, pos, font, scale, color, 1,cv2.LINE_AA)
 
 
 def resize_with_aspect_ratio(frame, target_size, bg_color=(0, 0, 0)):
@@ -236,7 +236,7 @@ class CameraFeed:
     def get_display_frame(self, display_size=(1280, 720)):
         """Get frame formatted for display with improved text"""
         # Increased info panel height for better text display
-        info_height = 160
+        info_height = 240
         
         if self.latest_frame is None or self.latest_result is None:
             # Create "no signal" display with better text
@@ -351,7 +351,7 @@ def calculate_optimal_camera_size(num_cameras, max_cols=3, target_screen_size=(1
     # Reserve space for title bar and spacing
     title_height = 60
     spacing = 10
-    info_panel_height = 160
+    info_panel_height = 240
     
     available_width = target_screen_size[0] - (spacing * (cols + 1))
     available_height = target_screen_size[1] - title_height - (spacing * (rows + 1))
@@ -365,9 +365,9 @@ def calculate_optimal_camera_size(num_cameras, max_cols=3, target_screen_size=(1
     camera_frame_height = max(camera_frame_height, 240)
     
     # Total height includes info panel
-    camera_total_height = camera_frame_height + info_panel_height
+    #camera_total_height = camera_frame_height + info_panel_height
     
-    return (camera_width, camera_total_height)
+    return (camera_width, camera_frame_height)
 
 
 def create_grid_layout(camera_feeds, max_cols=3, camera_size=(1280, 720)):
@@ -556,7 +556,9 @@ Features:
     
     # Setup display with better window properties
     window_name = 'Multi-Camera Focus'
-    cv2.namedWindow(window_name, cv2.WINDOW_NORMAL | cv2.WINDOW_KEEPRATIO)
+    cv2.namedWindow(window_name, cv2.WINDOW_FULLSCREEN|cv2.WINDOW_KEEPRATIO)
+    #cv2.resizeWindow(window_name, 1280, 720)
+    
     
     print(f"\n📺 Live dashboard started - showing {len(working_feeds)} cameras simultaneously")
     print("📋 Controls: 'q' to quit, 's' to save screenshot, or close window")
