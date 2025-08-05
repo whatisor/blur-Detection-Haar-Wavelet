@@ -146,6 +146,48 @@ def enhance_dark_image(img, method='clahe'):
         return img
 
 
+def enhance_dark_image_color(img, method='combined'):
+    """
+    Enhance dark color images for preview purposes
+    
+    Args:
+        img: Input BGR color image
+        method: Enhancement method ('clahe', 'gamma', 'combined')
+        
+    Returns:
+        Enhanced BGR color image
+    """
+    if method == 'clahe':
+        # Apply CLAHE to each channel in LAB color space for better results
+        lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
+        clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
+        lab[:,:,0] = clahe.apply(lab[:,:,0])  # Apply to L channel only
+        return cv2.cvtColor(lab, cv2.COLOR_LAB2BGR)
+    
+    elif method == 'gamma':
+        # Gamma correction for dark images
+        gamma = 0.5  # Makes dark areas brighter
+        inv_gamma = 1.0 / gamma
+        table = np.array([((i / 255.0) ** inv_gamma) * 255 for i in np.arange(0, 256)]).astype("uint8")
+        return cv2.LUT(img, table)
+    
+    elif method == 'combined':
+        # Apply CLAHE in LAB space then gamma correction
+        lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+        lab[:,:,0] = clahe.apply(lab[:,:,0])  # Apply to L channel only
+        enhanced = cv2.cvtColor(lab, cv2.COLOR_LAB2BGR)
+        
+        # Mild gamma correction
+        gamma = 0.7
+        inv_gamma = 1.0 / gamma
+        table = np.array([((i / 255.0) ** inv_gamma) * 255 for i in np.arange(0, 256)]).astype("uint8")
+        return cv2.LUT(enhanced, table)
+    
+    else:
+        return img
+
+
 def calculate_adaptive_threshold(edge_maps, base_threshold, is_dark=False):
     """
     Calculate adaptive thresholds based on edge magnitude distribution
@@ -184,20 +226,25 @@ def blur_detect(img, threshold, dark_threshold=50, enable_dark_enhancement=True)
         enable_dark_enhancement: Whether to apply enhancement for dark images
         
     Returns:
-        tuple: (Per, BlurExtent, E1, E2, E3, is_dark_processed)
+        tuple: (Per, BlurExtent, E1, E2, E3, is_dark_processed, enhanced_image)
             - Per: Percentage of sharp edge structures
             - BlurExtent: Blur extent ratio (0-1, higher = more blur)
             - E1, E2, E3: Edge maps at different scales
             - is_dark_processed: Whether dark image enhancement was applied
+            - enhanced_image: Enhanced grayscale image (if enhancement applied), None otherwise
     """
     # Convert image to grayscale
     Y = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    original_Y = Y.copy()  # Keep original for comparison
     
     # Detect if image is dark and apply enhancement if needed
     is_dark = is_dark_image(Y, dark_threshold)
     is_dark_processed = False
+    enhanced_image = None
+    
     if is_dark and enable_dark_enhancement:
         Y = enhance_dark_image(Y, method='combined')  # Use combined enhancement for best results
+        enhanced_image = Y.copy()  # Store enhanced image for preview
         is_dark_processed = True
     
     M, N = Y.shape
@@ -334,7 +381,7 @@ def blur_detect(img, threshold, dark_threshold=50, enable_dark_enhancement=True)
     else:
         BlurExtent = np.sum(BlurC) / (np.sum(RGstructure) + np.sum(RSstructure))
     
-    return Per, BlurExtent, E1, E2, E3, is_dark_processed
+    return Per, BlurExtent, E1, E2, E3, is_dark_processed, enhanced_image
 
 
 def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_threshold=0.7, feature_sensitivity=0.75, 
@@ -364,7 +411,7 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
     
     # Step 1: Detect blur on center region (50% width, 50% height)
     center_img = extract_center_region(img, 0.5)
-    center_per, center_blurext, center_E1, center_E2, center_E3, center_dark_processed = blur_detect(
+    center_per, center_blurext, center_E1, center_E2, center_E3, center_dark_processed, center_enhanced = blur_detect(
         center_img, threshold, dark_threshold, enable_dark_enhancement)
     
     # Step 1.5: Analyze feature density to detect low-feature images
@@ -386,18 +433,20 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
     
     if process_full:
         # Process full image
-        full_per, full_blurext, full_E1, full_E2, full_E3, full_dark_processed = blur_detect(
+        full_per, full_blurext, full_E1, full_E2, full_E3, full_dark_processed, full_enhanced = blur_detect(
             img, threshold, dark_threshold, enable_dark_enhancement)
         final_per = full_per
         final_blurext = full_blurext
         final_E1, final_E2, final_E3 = full_E1, full_E2, full_E3
         dark_processed = full_dark_processed
+        enhanced_image = full_enhanced
         processing_info = "Full image processed"
     else:
         # Use center results - resize edge maps to match full image scale for visualization
         final_per = center_per
         final_blurext = center_blurext
         dark_processed = center_dark_processed
+        enhanced_image = center_enhanced
         
         # Scale edge maps to represent full image dimensions for consistent visualization
         scale_factor = 2  # Center is 50% of original
@@ -429,6 +478,9 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
     
     # Add dark image processing information
     if dark_processed:
+        quality_score /= 2
+        classification = quality_score < 20 or ( quality_score < 50 and final_per < min_zero_threshold)
+
         processing_note += " (Dark image enhancement applied)"
     
     return {
@@ -442,5 +494,6 @@ def advanced_blur_detect(img, threshold, min_zero_threshold, conservative_thresh
         'processed_full': process_full,
         'is_low_feature': is_low_feature,  # Whether image has low feature density
         'feature_metrics': feature_metrics,  # Detailed feature analysis
-        'is_dark_processed': dark_processed  # Whether dark image enhancement was applied
+        'is_dark_processed': dark_processed,  # Whether dark image enhancement was applied
+        'enhanced_image': enhanced_image  # Enhanced grayscale image (if enhancement applied), None otherwise
     } 

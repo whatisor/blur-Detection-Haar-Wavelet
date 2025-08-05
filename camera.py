@@ -16,8 +16,36 @@ import urllib.error
 import argparse
 import threading
 from queue import Queue
-from detector import advanced_blur_detect
+from detector import advanced_blur_detect, enhance_dark_image_color, is_dark_image
 from utils import setup_window, get_quality_color
+
+# Global variables for slider controls
+dark_enhancement_threshold = 0  # Range: 0 to 100, 0 = disabled
+
+
+def map_slider_to_threshold(slider_value):
+    """
+    Map slider value (0 to 100) to actual dark threshold (0-255)
+    
+    Args:
+        slider_value: Slider value from 0 to 100, where 0 means disabled
+        
+    Returns:
+        tuple: (enable_dark_enhancement, dark_threshold)
+    """
+    if slider_value == 0:
+        return False, 50  # Disabled
+    else:
+        # Values 1-100 map to thresholds 200-10 (higher slider = more sensitive)
+        # Lower threshold means more images are detected as dark
+        threshold = 255 * slider_value / 100
+        return True, int(threshold)
+
+
+def on_dark_threshold_change(val):
+    """Callback for dark enhancement threshold slider"""
+    global dark_enhancement_threshold
+    dark_enhancement_threshold = val  # Direct mapping from 0-100
 
 
 def draw_text_sharp(img, text, pos, font, scale, color, thickness, outline_color=(0, 0, 0), outline_thickness=None):
@@ -205,6 +233,10 @@ class CameraFeed:
                     fps_frame_count = 0
                     fps_start_time = current_time
                 
+                # Use dynamic slider values for dark enhancement
+                global dark_enhancement_threshold
+                enable_dark, dark_thresh = map_slider_to_threshold(dark_enhancement_threshold)
+                
                 # Run blur detection
                 result = advanced_blur_detect(
                     frame,
@@ -212,8 +244,8 @@ class CameraFeed:
                     self.blur_params['min_zero_threshold'], 
                     self.blur_params['conservative_threshold'],
                     self.blur_params['feature_sensitivity'],
-                    self.blur_params['dark_threshold'],
-                    self.blur_params['enable_dark_enhancement']
+                    dark_thresh,
+                    enable_dark
                 )
                 
                 # Store latest data (thread-safe)
@@ -234,7 +266,7 @@ class CameraFeed:
                 time.sleep(1)
     
     def get_display_frame(self, display_size=(1280, 720)):
-        """Get frame formatted for display with improved text"""
+        """Get frame formatted for display with improved text and enhanced image preview"""
         # Increased info panel height for better text display
         info_height = 160
         
@@ -255,8 +287,49 @@ class CameraFeed:
                                  cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 100, 255), 3)
             return display
         
-        # Resize frame while maintaining aspect ratio
-        frame_resized = resize_with_aspect_ratio(self.latest_frame, display_size, bg_color=(20, 20, 20))
+        # Check if dark enhancement is enabled and if image is dark
+        global dark_enhancement_threshold
+        enable_dark, dark_thresh = map_slider_to_threshold(dark_enhancement_threshold)
+        result = self.latest_result
+        is_dark_processed = result.get('is_dark_processed', False)
+        
+        if enable_dark and dark_enhancement_threshold > 0:
+            # Check if current frame is dark for preview enhancement
+            gray = cv2.cvtColor(self.latest_frame, cv2.COLOR_BGR2GRAY)
+            frame_is_dark = is_dark_image(gray, dark_thresh)
+            
+            if frame_is_dark:
+                # Show vertical stack comparison: original on top, color-enhanced on bottom
+                # Apply color enhancement for preview (much better visual feedback)
+                enhanced_color = enhance_dark_image_color(self.latest_frame, method='combined')
+                
+                # Resize both images to fit half the display height
+                half_height = display_size[1] // 2
+                original_resized = resize_with_aspect_ratio(self.latest_frame, 
+                                                          (display_size[0], half_height), bg_color=(20, 20, 20))
+                enhanced_resized = resize_with_aspect_ratio(enhanced_color, 
+                                                          (display_size[0], half_height), bg_color=(20, 20, 20))
+                
+                # Combine vertically (original on top, enhanced on bottom)
+                frame_combined = np.vstack([original_resized, enhanced_resized])
+                
+                # Ensure the combined frame has exactly the expected dimensions to avoid dimension mismatch
+                if frame_combined.shape[:2] != (display_size[1], display_size[0]):
+                    frame_resized = cv2.resize(frame_combined, display_size)
+                else:
+                    frame_resized = frame_combined
+                
+                # Add labels to distinguish original vs enhanced
+                draw_text_sharp(frame_resized, "Original", (10, 30), 
+                               cv2.FONT_HERSHEY_SIMPLEX, 0.6, (100, 255, 100), 2)
+                draw_text_sharp(frame_resized, "Enhanced (Color)", (10, half_height + 30), 
+                               cv2.FONT_HERSHEY_SIMPLEX, 0.6, (100, 255, 255), 2)
+            else:
+                # Not dark enough for enhancement, show normal frame
+                frame_resized = resize_with_aspect_ratio(self.latest_frame, display_size, bg_color=(20, 20, 20))
+        else:
+            # Dark enhancement disabled, show normal frame
+            frame_resized = resize_with_aspect_ratio(self.latest_frame, display_size, bg_color=(20, 20, 20))
         
         # Create larger info panel with gradient background for better text visibility
         info_panel = np.zeros((info_height, display_size[0], 3), dtype=np.uint8)
@@ -314,11 +387,22 @@ class CameraFeed:
                        font_detail, 0.5, (220, 220, 220), 1)
         
         # Line 5: Status (FPS and flags, sharp)
+        # Note: global dark_enhancement_threshold already declared at method start
         status_parts = [f"FPS: {self.fps:.1f}"]
         if is_low_feature:
             status_parts.append("Low-feature")
         if is_dark_processed:
-            status_parts.append("Dark-enhanced")
+            status_parts.append("Dark-calc")  # Used in blur calculation
+        
+        # Check if color enhancement is being applied for preview
+        if dark_enhancement_threshold > 0:
+            enable_dark, dark_thresh = map_slider_to_threshold(dark_enhancement_threshold)
+            if enable_dark and self.latest_frame is not None:
+                gray = cv2.cvtColor(self.latest_frame, cv2.COLOR_BGR2GRAY)
+                if is_dark_image(gray, dark_thresh):
+                    status_parts.append("Color-enhanced")  # Used for preview
+        
+        status_parts.append(f"Dark: {dark_enhancement_threshold}")
         
         status_text = " | ".join(status_parts)
         draw_text_sharp(info_panel, status_text, (10, next_y + 75), 
@@ -445,7 +529,7 @@ Features:
                        help='Each camera display size (default: auto-calculated for full display) - aspect ratio preserved')
     parser.add_argument('--screen-size', default="1920x1080",
                        help='Screen resolution for auto-sizing (default: 1920x1080)')
-    
+    # Note: Dark enhancement is now controlled by the interactive slider
     args = parser.parse_args()
     
     print("🚀 Multi-Camera Simultaneous Blur Detection Dashboard")
@@ -539,14 +623,13 @@ Features:
     
     print(f"\n✅ {len(working_feeds)} camera(s) connected and will display simultaneously")
     
-    # Blur detection parameters
+    # Blur detection parameters (dark enhancement now controlled by slider)
     blur_params = {
         'threshold': args.threshold,
         'min_zero_threshold': 0.001,
         'conservative_threshold': 0.7,
-        'feature_sensitivity': 0.75,
-        'dark_threshold': 50,
-        'enable_dark_enhancement': False
+        'feature_sensitivity': 0.75
+        # dark_threshold and enable_dark_enhancement are now dynamic from slider
     }
     
     # Start all camera processing threads
@@ -558,8 +641,14 @@ Features:
     window_name = 'Multi-Camera Dashboard - Sharp Text'
     cv2.namedWindow(window_name, cv2.WINDOW_NORMAL | cv2.WINDOW_KEEPRATIO)
     
+    # Create dark enhancement threshold slider
+    # Slider range: 0-100, where 0 = disabled
+    cv2.createTrackbar('Dark Enhancement (0-100, 0=off)', window_name, 0, 100, on_dark_threshold_change)
+    
     print(f"\n📺 Live dashboard started - showing {len(working_feeds)} cameras simultaneously")
     print("📋 Controls: 'q' to quit, 's' to save screenshot")
+    print("🎛️  Dark Enhancement Slider: 0-100 (0 = disabled)")
+    print("   - Higher values: More sensitive to dark images (enhances more images)") 
     print("✨ Features: Sharp crisp text, auto-sized for full display, aspect ratio preserved")
     
     frame_count = 0
