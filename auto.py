@@ -143,7 +143,7 @@ def launch_camera_dashboard(camera_ips, port="9080"):
         return
     
     # Build command line arguments
-    cmd = ['python', 'camera.py', '-c'] + reachable_cameras
+    cmd = ['camera.exe', '-c'] + reachable_cameras
     
     print(f"\n🚀 Launching camera dashboard with {len(reachable_cameras)} cameras:")
     for i, camera in enumerate(reachable_cameras, 1):
