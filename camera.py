@@ -555,11 +555,11 @@ Features:
         feed.start_processing(blur_params)
     
     # Setup display with better window properties
-    window_name = 'Multi-Camera Dashboard - Sharp Text'
+    window_name = 'Multi-Camera Focus'
     cv2.namedWindow(window_name, cv2.WINDOW_NORMAL | cv2.WINDOW_KEEPRATIO)
     
     print(f"\n📺 Live dashboard started - showing {len(working_feeds)} cameras simultaneously")
-    print("📋 Controls: 'q' to quit, 's' to save screenshot")
+    print("📋 Controls: 'q' to quit, 's' to save screenshot, or close window")
     print("✨ Features: Sharp crisp text, auto-sized for full display, aspect ratio preserved")
     
     frame_count = 0
@@ -596,8 +596,14 @@ Features:
             # Display
             cv2.imshow(window_name, final_display)
             
-            # Handle input
-            key = cv2.waitKey(30) & 0xFF
+            # Handle input and window close
+            key = cv2.waitKey(1) & 0xFF
+            
+            # Check if window was closed (user clicked X button)
+            if cv2.getWindowProperty(window_name, cv2.WND_PROP_VISIBLE) < 1:
+                print("🛑 Window closed by user, shutting down...")
+                break
+            
             if key == ord('q'):
                 print("🛑 Shutting down...")
                 break
